@@ -1,0 +1,64 @@
+{
+  "name": "hogwarts-schedule",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "test:cucumber": "cucumber-js --require-module ts-node/register --require src/test/cucumber/support/dom.setup.tsx --require \"src/test/cucumber/steps/**/*.tsx\" --require \"src/test/cucumber/support/**/*.tsx\"",
+    "test:cucumber:report": "cucumber-js --require-module ts-node/register --require src/test/cucumber/support/dom.setup.tsx --require \"src/test/cucumber/steps/**/*.tsx\" --require \"src/test/cucumber/support/**/*.tsx\" --format html:reports/cucumber-report.html --format json:reports/cucumber-report.json --format summary"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/chai": "^5.0.1",
+    "@types/cucumber": "^7.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "chai": "^4.3.10",
+    "cross-env": "^7.0.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^25.0.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2"
+  }
+}

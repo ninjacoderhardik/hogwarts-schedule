@@ -1,0 +1,873 @@
+[
+  {
+    "description": "  As a school administrator\n  I want to manage teacher attendance and see updated class schedules\n  So that I can ensure all students have appropriate teacher assignments",
+    "elements": [
+      {
+        "description": "",
+        "id": "hogwarts-class-schedule-management;unassigned-student-gets-standby-professor",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "Unassigned student gets standby professor",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2263570
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Teacher",
+                      "Role",
+                      "Subject",
+                      "Reports To"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Professor Dumbledore",
+                      "Headmaster",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Minerva McGonagall",
+                      "Headmistress",
+                      "",
+                      "Professor Dumbledore"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Rubeus Hagrid",
+                      "Standby Professor",
+                      "Potions Master",
+                      "Minerva McGonagall"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Horace Slughorn",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Severus Snape",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the following teacher hierarchy exists:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 165998853
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Student",
+                      "Subject",
+                      "Teacher"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Harry Potter",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Hermione Granger",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Ron Weasley",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Draco Malfoy",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Padma Patil",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Luna Lovegood",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the following student allocations exist:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 125927231
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "all teachers are initially present",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 117242619
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I view the current schedule",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:98"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 114693172
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "\"Hermione Granger\" should be assigned to \"Rubeus Hagrid\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:155"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11936966
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "\"Padma Patil\" should be assigned to \"Rubeus Hagrid\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:155"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2449534
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 7083268
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "hogwarts-class-schedule-management;teacher-absence-triggers-hierarchy-based-reassignment",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Teacher absence triggers hierarchy-based reassignment",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 93888
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Teacher",
+                      "Role",
+                      "Subject",
+                      "Reports To"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Professor Dumbledore",
+                      "Headmaster",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Minerva McGonagall",
+                      "Headmistress",
+                      "",
+                      "Professor Dumbledore"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Rubeus Hagrid",
+                      "Standby Professor",
+                      "Potions Master",
+                      "Minerva McGonagall"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Horace Slughorn",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Severus Snape",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the following teacher hierarchy exists:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 121117073
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Student",
+                      "Subject",
+                      "Teacher"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Harry Potter",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Hermione Granger",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Ron Weasley",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Draco Malfoy",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Padma Patil",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Luna Lovegood",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the following student allocations exist:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 113575178
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "all teachers are initially present",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 112576496
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "\"Horace Slughorn\" is marked as \"Absent\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 124275528
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "\"Harry Potter\" should be assigned to \"Rubeus Hagrid\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:155"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2064828
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "\"Draco Malfoy\" should be assigned to \"Rubeus Hagrid\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:155"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1515296
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "But ",
+            "line": 35,
+            "name": "\"Ron Weasley\" should still be assigned to \"Severus Snape\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:201"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1462919
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3609437
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "hogwarts-class-schedule-management;multiple-teacher-absences-trigger-hierarchical-fallback",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "Multiple teacher absences trigger hierarchical fallback",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 66955
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Teacher",
+                      "Role",
+                      "Subject",
+                      "Reports To"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Professor Dumbledore",
+                      "Headmaster",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Minerva McGonagall",
+                      "Headmistress",
+                      "",
+                      "Professor Dumbledore"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Rubeus Hagrid",
+                      "Standby Professor",
+                      "Potions Master",
+                      "Minerva McGonagall"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Horace Slughorn",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Severus Snape",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the following teacher hierarchy exists:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115052927
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Student",
+                      "Subject",
+                      "Teacher"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Harry Potter",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Hermione Granger",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Ron Weasley",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Draco Malfoy",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Padma Patil",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Luna Lovegood",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the following student allocations exist:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 151043845
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "all teachers are initially present",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137853584
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Teacher"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Severus Snape"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Rubeus Hagrid"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 38,
+            "name": "the following teachers are marked as absent:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:129"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 324491404
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 43,
+            "name": "all students should be assigned to \"Minerva McGonagall\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:245"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1682665
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 5592936
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "hogwarts-class-schedule-management;all-teachers-absent-results-in-unassigned-students",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "All teachers absent results in unassigned students",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 46890
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Teacher",
+                      "Role",
+                      "Subject",
+                      "Reports To"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Professor Dumbledore",
+                      "Headmaster",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Minerva McGonagall",
+                      "Headmistress",
+                      "",
+                      "Professor Dumbledore"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Rubeus Hagrid",
+                      "Standby Professor",
+                      "Potions Master",
+                      "Minerva McGonagall"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Horace Slughorn",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Severus Snape",
+                      "Professor",
+                      "Potions Master",
+                      "Rubeus Hagrid"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the following teacher hierarchy exists:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 123110340
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Student",
+                      "Subject",
+                      "Teacher"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Harry Potter",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Hermione Granger",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Ron Weasley",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Draco Malfoy",
+                      "Potions Master",
+                      "Horace Slughorn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Padma Patil",
+                      "Potions Master",
+                      ""
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Luna Lovegood",
+                      "Potions Master",
+                      "Severus Snape"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the following student allocations exist:",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 183894236
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "all teachers are initially present",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 111619733
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "all teachers are marked as \"Absent\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:269"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 431175997
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "all students should be marked as \"Not Assigned\"",
+            "match": {
+              "location": "src/test/cucumber/steps/scheduleSteps.tsx:296"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1253775
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3044515
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "hogwarts-class-schedule-management",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Hogwarts Class Schedule Management",
+    "tags": [],
+    "uri": "src/features/schedule.feature"
+  }
+]
