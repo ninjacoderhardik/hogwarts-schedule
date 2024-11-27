@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# Hogwarts Schedule React App
+
+This project implements a Hogwarts class scheduling system with teacher attendance tracking and dynamic teacher assignment based on hierarchy.
+
+## Project Overview
+
+The application consists of two main sections:
+- **Attendance**: Tracks teacher presence/absence status
+- **Current Schedule**: Displays student-teacher assignments that automatically update based on attendance
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd hogwarts-schedule-app
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
 
 ## Available Scripts
 
@@ -27,17 +55,49 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run test:cucumber`
+
+Runs Cucumber integration tests for the application. Tests are written in Gherkin syntax and can be found in the `src/test/cucumber` directory.
+
+### `npm run test:cucumber:report`
+
+Runs Cucumber tests and generates HTML and JSON reports in the `reports` directory.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Testing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Unit Tests
+
+The project includes comprehensive unit tests focusing on:
+- Teacher attendance management
+- Student-teacher assignment logic
+- Hierarchy-based teacher reassignment
+- Component rendering and interactions
+
+### Cucumber Integration Tests
+
+Integration tests are written using Cucumber to ensure the application behaves correctly in real-world scenarios. Test files are organized as follows:
+
+```
+src/test/cucumber/
+├── features/        # Feature files written in Gherkin
+├── steps/          # Step definitions
+└── support/        # Support files and setup
+```
+
+To run Cucumber tests with HTML reports:
+```bash
+npm run test:cucumber:report
+```
+
+Reports can be found in:
+- HTML: `reports/cucumber-report.html`
+- JSON: `reports/cucumber-report.json`
 
 ## Learn More
 
